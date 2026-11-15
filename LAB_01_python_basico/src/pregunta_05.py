@@ -1,3 +1,6 @@
+from .analysis import analyze_all
+
+
 def pregunta_05():
     """
     Para cada letra de la primera columna (`letter`), encuentre el valor
@@ -9,4 +12,4 @@ def pregunta_05():
         [("A", 9, 2), ("B", 9, 1), ...]
     """
 
-    raise NotImplementedError
+    return analyze_all()["05"]

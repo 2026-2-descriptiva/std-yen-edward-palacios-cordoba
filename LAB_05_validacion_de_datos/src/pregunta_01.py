@@ -1,3 +1,6 @@
+from .analysis import build_quality_report
+
+
 def main():
     """
     Antes de limpiar o analizar un conjunto de datos, un analista debe
@@ -48,4 +51,4 @@ def main():
         }
     """
 
-    raise NotImplementedError
+    return build_quality_report()

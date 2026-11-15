@@ -1,3 +1,6 @@
+from .analysis import answer
+
+
 def pregunta_05():
     """
     Usando `data/tbl0.tsv`, encuentre el valor máximo de la columna `c2` para
@@ -13,4 +16,4 @@ def pregunta_05():
         ...
     """
 
-    raise NotImplementedError
+    return answer("05")

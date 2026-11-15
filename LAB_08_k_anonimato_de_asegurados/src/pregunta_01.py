@@ -1,3 +1,6 @@
+from .analysis import write_privacy_outputs
+
+
 def pregunta_01():
     """
     Una aseguradora quiere publicar datos de sus afiliados para que un grupo
@@ -80,4 +83,4 @@ def pregunta_01():
         }
     """
 
-    raise NotImplementedError
+    return write_privacy_outputs()

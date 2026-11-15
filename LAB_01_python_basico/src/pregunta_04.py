@@ -1,3 +1,6 @@
+from .analysis import analyze_all
+
+
 def pregunta_04():
     """
     Cuente cuántos registros hay en cada mes, usando la fecha de la tercera
@@ -9,4 +12,4 @@ def pregunta_04():
         [("01", 3), ("02", 4), ("03", 2), ...]
     """
 
-    raise NotImplementedError
+    return analyze_all()["04"]

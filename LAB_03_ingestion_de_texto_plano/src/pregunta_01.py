@@ -1,3 +1,6 @@
+from .analysis import build_cluster_dataframe
+
+
 def pregunta_01():
     """
     El archivo `data/clusters_report.txt` es un reporte de clústeres de
@@ -26,4 +29,4 @@ def pregunta_01():
         ...
     """
 
-    raise NotImplementedError
+    return build_cluster_dataframe()

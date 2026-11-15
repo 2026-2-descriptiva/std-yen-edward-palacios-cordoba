@@ -1,3 +1,6 @@
+from .analysis import answer
+
+
 def pregunta_13():
     """
     Combine las tablas `data/tbl0.tsv` y `data/tbl2.tsv` usando la columna
@@ -15,4 +18,4 @@ def pregunta_13():
         ...
     """
 
-    raise NotImplementedError
+    return answer("13")

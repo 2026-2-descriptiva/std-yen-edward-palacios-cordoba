@@ -1,5 +1,7 @@
 import pandas as pd
 
+from .analysis import SUBMISSION_DIRECTORY, build_clean_tables
+
 
 def clean_campaign_data() -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
     """
@@ -43,4 +45,9 @@ def clean_campaign_data() -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
         ...
     """
 
-    raise NotImplementedError
+    client, campaign, economics = build_clean_tables()
+    SUBMISSION_DIRECTORY.mkdir(parents=True, exist_ok=True)
+    client.to_csv(SUBMISSION_DIRECTORY / "client.csv", index=False)
+    campaign.to_csv(SUBMISSION_DIRECTORY / "campaign.csv", index=False)
+    economics.to_csv(SUBMISSION_DIRECTORY / "economics.csv", index=False)
+    return client, campaign, economics

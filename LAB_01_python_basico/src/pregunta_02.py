@@ -1,3 +1,6 @@
+from .analysis import analyze_all
+
+
 def pregunta_02():
     """
     Cuente cuántos registros hay para cada letra de la primera columna
@@ -9,4 +12,4 @@ def pregunta_02():
         [("A", 8), ("B", 7), ("C", 5), ...]
     """
 
-    raise NotImplementedError
+    return analyze_all()["02"]

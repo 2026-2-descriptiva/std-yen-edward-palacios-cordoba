@@ -1,3 +1,6 @@
+from .analysis import analyze_all
+
+
 def pregunta_10():
     """
     Para cada registro del archivo, en el mismo orden en que aparecen,
@@ -11,4 +14,4 @@ def pregunta_10():
         [("E", 3, 5), ("A", 3, 4), ("B", 4, 4), ...]
     """
 
-    raise NotImplementedError
+    return analyze_all()["10"]

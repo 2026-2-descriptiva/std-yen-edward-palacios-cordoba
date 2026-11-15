@@ -1,3 +1,6 @@
+from .analysis import answer
+
+
 def pregunta_07():
     """
     Usando `data/tbl0.tsv`, sume los valores de la columna `c2` para cada
@@ -13,4 +16,4 @@ def pregunta_07():
         ...
     """
 
-    raise NotImplementedError
+    return answer("07")

@@ -15,3 +15,17 @@ Los diez archivos comprimidos de `data/` contienen los registros originales de l
 ## Restricciones
 
 Procese los archivos directamente comprimidos y conserve las tres salidas solicitadas como CSV en `submission/`.
+
+## Ejecución
+
+Desde la raíz del repositorio, genere las tres tablas y vea una muestra:
+
+```bash
+python -m LAB_07_limpieza_de_campanas.src.main
+```
+
+Para validar la solución:
+
+```bash
+python -m pytest LAB_07_limpieza_de_campanas/tests/test_activity.py -q
+```

@@ -1,3 +1,6 @@
+from .analysis import analyze_all
+
+
 def pregunta_06():
     """
     La quinta columna (`metrics`) contiene pares `clave:valor` separados por
@@ -13,4 +16,4 @@ def pregunta_06():
         [("aaa", 1, 9), ("bbb", 1, 9), ...]
     """
 
-    raise NotImplementedError
+    return analyze_all()["06"]

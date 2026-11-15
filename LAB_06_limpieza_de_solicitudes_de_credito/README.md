@@ -17,3 +17,17 @@ Limpia datos tabulares mediante reglas reproducibles, conserva información vál
 - No modifique el archivo de `data/` ni los archivos de `tests/`.
 - Escriba su solución en la función `pregunta_01()` de `src/pregunta_01.py`; las pruebas ejecutan esa función.
 - El único entregable es `submission/solicitudes_de_credito.csv`, separado por punto y coma.
+
+## Ejecución
+
+Desde la raíz del repositorio, genere el archivo limpio y vea una muestra:
+
+```bash
+python -m LAB_06_limpieza_de_solicitudes_de_credito.src.main
+```
+
+Para validar la solución:
+
+```bash
+python -m pytest LAB_06_limpieza_de_solicitudes_de_credito/tests/test_activity.py -q
+```

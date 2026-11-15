@@ -1,3 +1,6 @@
+from .analysis import answer
+
+
 def pregunta_10():
     """
     Usando `data/tbl0.tsv`, construya para cada categoría de la columna `c1`
@@ -15,4 +18,4 @@ def pregunta_10():
         ...
     """
 
-    raise NotImplementedError
+    return answer("10")

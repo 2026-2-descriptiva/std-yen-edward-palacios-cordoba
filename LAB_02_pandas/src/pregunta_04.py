@@ -1,3 +1,6 @@
+from .analysis import answer
+
+
 def pregunta_04():
     """
     Usando `data/tbl0.tsv`, calcule el promedio de la columna `c2` para cada
@@ -13,4 +16,4 @@ def pregunta_04():
         ...
     """
 
-    raise NotImplementedError
+    return answer("04")

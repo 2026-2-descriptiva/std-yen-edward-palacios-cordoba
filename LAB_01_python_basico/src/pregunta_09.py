@@ -1,3 +1,6 @@
+from .analysis import analyze_all
+
+
 def pregunta_09():
     """
     Cuente cuántas veces aparece cada clave en la quinta columna (`metrics`)
@@ -9,4 +12,4 @@ def pregunta_09():
         {"aaa": 13, "bbb": 16, "ccc": 23, ...}
     """
 
-    raise NotImplementedError
+    return analyze_all()["09"]

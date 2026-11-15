@@ -23,3 +23,4 @@ Cada archivo `src/pregunta_*.py` contiene el enunciado y la función que debe re
 - Use Pandas para cargar y transformar los datos.
 - No modifique los archivos de `data/` ni los de `tests/`.
 - Cada función debe retornar el resultado solicitado; no debe imprimirlo ni escribir archivos de salida.
+

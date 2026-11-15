@@ -18,3 +18,18 @@ Identifica un efecto de composición en una comparación entre grupos, construye
 - No modifique el archivo de `data/` ni los archivos de `tests/`.
 - Escriba su solución en la función `pregunta_01()` de `src/pregunta_01.py`; las pruebas ejecutan esa función.
 - Los entregables son los dos archivos CSV indicados en la pregunta, en `submission/`.
+
+## Ejecución
+
+Desde la raíz del repositorio, genere los archivos CSV y vea las tasas y el
+ranking en la consola con:
+
+```powershell
+python -m LAB_11_demoras_ajustadas_por_horario.src.main
+```
+
+Para ejecutar la prueba:
+
+```powershell
+python -m pytest LAB_11_demoras_ajustadas_por_horario/tests/test_activity.py -q
+```

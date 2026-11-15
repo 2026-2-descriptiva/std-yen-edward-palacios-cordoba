@@ -20,3 +20,18 @@ La función y el enunciado de la actividad están en `src/pregunta_01.py`.
 - No modifique archivos de `data/` ni de `tests/`.
 - Los entregables permanentes deben escribirse únicamente en `submission/`.
 - No escriba resultados en la raíz del laboratorio ni en `data/`.
+
+## Ejecución
+
+Desde la raíz del repositorio, genere los dos CSV y vea una muestra de cada uno:
+
+```bash
+python -m LAB_04_ingestion_de_texto_en_directorios.src.main
+```
+
+Los archivos completos se guardan en `submission/train_dataset.csv` y
+`submission/test_dataset.csv`. Para validar la solución:
+
+```bash
+python -m pytest LAB_04_ingestion_de_texto_en_directorios/tests/test_activity.py -q
+```

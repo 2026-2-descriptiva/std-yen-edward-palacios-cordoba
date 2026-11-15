@@ -19,3 +19,5 @@ La función y el enunciado de la actividad están en `src/pregunta_01.py`.
 - Use Pandas para construir el resultado tabular.
 - No modifique el archivo de `data/` ni los archivos de `tests/`.
 - La función debe retornar el DataFrame solicitado; no debe imprimirlo ni escribir archivos de salida.
+
+

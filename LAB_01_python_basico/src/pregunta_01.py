@@ -1,3 +1,6 @@
+from .analysis import analyze_all
+
+
 def pregunta_01():
     """
     Calcule la suma de los valores de la segunda columna (`value`) del
@@ -8,4 +11,4 @@ def pregunta_01():
         214
     """
 
-    raise NotImplementedError
+    return analyze_all()["01"]

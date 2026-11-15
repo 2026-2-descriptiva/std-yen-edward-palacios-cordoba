@@ -18,3 +18,18 @@ Construye un indicador de cumplimiento a partir de fechas, elige la unidad de ti
 - No modifique los archivos de `data/` ni los archivos de `tests/`.
 - Escriba su solución en la función `pregunta_01()` de `src/pregunta_01.py`; las pruebas ejecutan esa función.
 - Los entregables son los tres archivos CSV indicados en la pregunta, en `submission/`.
+
+## Ejecución
+
+Desde la raíz del repositorio, genere los archivos e imprima los resúmenes en
+la consola con:
+
+```powershell
+python -m LAB_13_tiempos_de_respuesta_pqrs.src.main
+```
+
+Para ejecutar la prueba:
+
+```powershell
+python -m pytest LAB_13_tiempos_de_respuesta_pqrs/tests/test_activity.py -q
+```

@@ -1,3 +1,6 @@
+from .analysis import write_clean_dataset
+
+
 def pregunta_01():
     """
     El archivo `data/solicitudes_de_credito.csv.gz` contiene las solicitudes de
@@ -34,4 +37,4 @@ def pregunta_01():
         ...
     """
 
-    raise NotImplementedError
+    return write_clean_dataset()

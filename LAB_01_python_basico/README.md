@@ -22,3 +22,5 @@ Construye resúmenes descriptivos reproducibles a partir de datos tabulares medi
 
 - Use solo la biblioteca estándar de Python; no use Pandas, NumPy, SciPy ni otra biblioteca externa.
 - No modifique `data/data.csv.gz` ni los archivos de `tests/`.
+
+

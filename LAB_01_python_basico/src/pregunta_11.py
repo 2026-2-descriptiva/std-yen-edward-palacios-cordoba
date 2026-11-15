@@ -1,3 +1,6 @@
+from .analysis import analyze_all
+
+
 def pregunta_11():
     """
     La cuarta columna (`codes`) contiene letras minúsculas separadas por
@@ -10,4 +13,4 @@ def pregunta_11():
         {"a": 122, "b": 49, "c": 91, ...}
     """
 
-    raise NotImplementedError
+    return analyze_all()["11"]

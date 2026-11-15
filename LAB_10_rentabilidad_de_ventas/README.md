@@ -18,3 +18,18 @@ Define indicadores de rentabilidad con sus denominadores correctos, distingue en
 - No modifique el archivo de `data/` ni los archivos de `tests/`.
 - Escriba su solución en la función `pregunta_01()` de `src/pregunta_01.py`; las pruebas ejecutan esa función.
 - Los entregables son los tres archivos CSV indicados en la pregunta, en `submission/`.
+
+## Ejecución
+
+Desde la raíz del repositorio, genere los archivos CSV y vea los resúmenes en
+la consola con:
+
+```powershell
+python -m LAB_10_rentabilidad_de_ventas.src.main
+```
+
+Para ejecutar la prueba:
+
+```powershell
+python -m pytest LAB_10_rentabilidad_de_ventas/tests/test_activity.py -q
+```

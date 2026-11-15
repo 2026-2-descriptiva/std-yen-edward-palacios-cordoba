@@ -1,3 +1,6 @@
+from .analysis import answer
+
+
 def pregunta_03():
     """
     Usando `data/tbl0.tsv`, cuente cuántos registros hay para cada categoría
@@ -13,4 +16,4 @@ def pregunta_03():
         ...
     """
 
-    raise NotImplementedError
+    return answer("03")

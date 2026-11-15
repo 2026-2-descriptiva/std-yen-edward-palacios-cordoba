@@ -1,3 +1,6 @@
+from .analysis import build_datasets
+
+
 def pregunta_01():
     """
     Las frases de este laboratorio no están en una tabla, sino en miles de
@@ -26,4 +29,4 @@ def pregunta_01():
         ...
     """
 
-    raise NotImplementedError
+    build_datasets()

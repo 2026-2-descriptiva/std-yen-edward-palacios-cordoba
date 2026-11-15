@@ -18,3 +18,17 @@ Evalúa el k-anonimato y la diversidad del atributo sensible de un conjunto de d
 - No modifique el archivo de `data/` ni los archivos de `tests/`.
 - Escriba su solución en la función `pregunta_01()` de `src/pregunta_01.py`; las pruebas ejecutan esa función.
 - Los entregables son `submission/privacy_report.json` y `submission/insurance_published.csv`.
+
+## Ejecución
+
+Desde la raíz del repositorio, genere los entregables y vea una muestra:
+
+```bash
+python -m LAB_08_k_anonimato_de_asegurados.src.main
+```
+
+Para validar la solución:
+
+```bash
+python -m pytest LAB_08_k_anonimato_de_asegurados/tests/test_activity.py -q
+```

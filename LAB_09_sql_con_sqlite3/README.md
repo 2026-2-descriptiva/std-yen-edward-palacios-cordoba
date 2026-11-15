@@ -15,3 +15,17 @@ Los archivos `data/tbl0.csv.gz`, `data/tbl1.csv.gz` y `data/tbl2.csv.gz` contien
 ## Restricciones
 
 Escriba una consulta por archivo en `src/pregunta_01.sql` a `src/pregunta_14.sql`. Las consultas se ejecutan sobre SQLite y no deben modificar los datos de entrada.
+
+## Ejecución
+
+Desde la raíz del repositorio, ejecute las 14 consultas y vea sus resultados:
+
+```bash
+python -m LAB_09_sql_con_sqlite3.src.main
+```
+
+Para validar las consultas:
+
+```bash
+python -m pytest LAB_09_sql_con_sqlite3/tests/test_activity.py -q
+```

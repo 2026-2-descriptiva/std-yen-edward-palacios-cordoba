@@ -1,3 +1,6 @@
+from .analysis import answer
+
+
 def pregunta_11():
     """
     En `data/tbl1.tsv`, cada valor de la columna `c0` aparece en varias
@@ -15,4 +18,4 @@ def pregunta_11():
         ...
     """
 
-    raise NotImplementedError
+    return answer("11")

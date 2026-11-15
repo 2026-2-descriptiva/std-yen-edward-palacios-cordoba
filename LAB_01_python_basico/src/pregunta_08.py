@@ -1,3 +1,6 @@
+from .analysis import analyze_all
+
+
 def pregunta_08():
     """
     Repita la pregunta 7, pero ahora cada lista de letras debe contener cada
@@ -9,4 +12,4 @@ def pregunta_08():
         [(0, ["C"]), (1, ["B", "E"]), (2, ["A", "E"]), ...]
     """
 
-    raise NotImplementedError
+    return analyze_all()["08"]

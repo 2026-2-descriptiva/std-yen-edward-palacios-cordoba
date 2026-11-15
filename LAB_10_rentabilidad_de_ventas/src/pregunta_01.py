@@ -1,3 +1,6 @@
+from pathlib import Path
+
+import numpy as np
 import pandas as pd
 
 
@@ -50,4 +53,120 @@ def pregunta_01() -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
         ...
     """
 
-    raise NotImplementedError
+    activity_dir = Path(__file__).resolve().parents[1]
+    data_path = activity_dir / "data" / "superstore_orders.csv.gz"
+    submission_dir = activity_dir / "submission"
+
+    orders = pd.read_csv(data_path, sep=";", decimal=",", compression="gzip")
+    orders["is_loss"] = orders["Profit"] < 0
+    orders["loss_amount"] = (-orders["Profit"]).where(orders["is_loss"], 0.0)
+
+    discount_labels = ["0%", "1%-5%", "6%-10%", "más de 10%"]
+    orders["discount_band"] = np.select(
+        [
+            orders["Discount"].eq(0),
+            orders["Discount"].gt(0) & orders["Discount"].le(0.05),
+            orders["Discount"].gt(0.05) & orders["Discount"].le(0.10),
+        ],
+        discount_labels[:3],
+        default=discount_labels[3],
+    )
+
+    sales = orders["Sales"].sum()
+    profit = orders["Profit"].sum()
+    losses = orders["is_loss"].sum()
+    profitability_summary = pd.DataFrame(
+        [
+            {
+                "lines": len(orders),
+                "orders": orders["Order ID"].nunique(),
+                "sales": sales,
+                "profit": profit,
+                "profit_margin": round(profit / sales, 4),
+                "loss_lines": losses,
+                "loss_line_rate": round(losses / len(orders), 4),
+                "lost_profit": orders["loss_amount"].sum(),
+            }
+        ],
+        columns=[
+            "lines",
+            "orders",
+            "sales",
+            "profit",
+            "profit_margin",
+            "loss_lines",
+            "loss_line_rate",
+            "lost_profit",
+        ],
+    )
+
+    discount_summary = (
+        orders.groupby("discount_band", sort=False)
+        .agg(
+            lines=("Profit", "size"),
+            sales=("Sales", "sum"),
+            profit=("Profit", "sum"),
+            loss_lines=("is_loss", "sum"),
+            lost_profit=("loss_amount", "sum"),
+        )
+        .reindex(discount_labels)
+        .rename_axis("discount_band")
+        .reset_index()
+    )
+    discount_summary["profit_margin"] = (
+        discount_summary["profit"] / discount_summary["sales"]
+    ).round(4)
+    discount_summary["loss_line_rate"] = (
+        discount_summary["loss_lines"] / discount_summary["lines"]
+    ).round(4)
+    discount_summary = discount_summary[
+        [
+            "discount_band",
+            "lines",
+            "sales",
+            "profit",
+            "profit_margin",
+            "loss_line_rate",
+            "lost_profit",
+        ]
+    ]
+
+    priority_segments = (
+        orders.groupby(["Customer Segment", "Product Category"], sort=False)
+        .agg(
+            lines=("Profit", "size"),
+            sales=("Sales", "sum"),
+            profit=("Profit", "sum"),
+            lost_profit=("loss_amount", "sum"),
+        )
+        .reset_index()
+    )
+    priority_segments = (
+        priority_segments.loc[priority_segments["lines"] >= 100]
+        .sort_values("lost_profit", ascending=False, kind="stable")
+        .head(5)
+        .copy()
+    )
+    priority_segments["profit_margin"] = (
+        priority_segments["profit"] / priority_segments["sales"]
+    ).round(4)
+    priority_segments = priority_segments[
+        [
+            "Customer Segment",
+            "Product Category",
+            "lines",
+            "sales",
+            "profit",
+            "profit_margin",
+            "lost_profit",
+        ]
+    ]
+
+    submission_dir.mkdir(parents=True, exist_ok=True)
+    profitability_summary.to_csv(
+        submission_dir / "profitability_summary.csv", index=False
+    )
+    discount_summary.to_csv(submission_dir / "discount_summary.csv", index=False)
+    priority_segments.to_csv(submission_dir / "priority_segments.csv", index=False)
+
+    return profitability_summary, discount_summary, priority_segments

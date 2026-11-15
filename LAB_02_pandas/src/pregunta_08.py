@@ -1,3 +1,6 @@
+from .analysis import answer
+
+
 def pregunta_08():
     """
     Retorne la tabla `data/tbl0.tsv` completa con una columna adicional
@@ -12,4 +15,4 @@ def pregunta_08():
         ...
     """
 
-    raise NotImplementedError
+    return answer("08")

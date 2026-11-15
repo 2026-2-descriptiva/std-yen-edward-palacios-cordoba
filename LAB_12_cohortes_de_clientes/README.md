@@ -15,3 +15,18 @@ Construye cohortes temporales, calcula tasas de retención con su denominador co
 ## Restricciones
 
 Genere `cohort_retention.csv` y `cohort_retention_heatmap.png` en `submission/`. No convierta períodos no observados en retención cero.
+
+## Ejecución
+
+Desde la raíz del repositorio, genere los archivos e imprima la tabla de
+retención con:
+
+```powershell
+python -m LAB_12_cohortes_de_clientes.src.main
+```
+
+Para ejecutar la prueba:
+
+```powershell
+python -m pytest LAB_12_cohortes_de_clientes/tests/test_activity.py -q
+```

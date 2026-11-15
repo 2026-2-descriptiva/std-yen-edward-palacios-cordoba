@@ -1,3 +1,6 @@
+from .analysis import analyze_all
+
+
 def pregunta_07():
     """
     Para cada valor distinto de la segunda columna (`value`), construya la
@@ -11,4 +14,4 @@ def pregunta_07():
         [(0, ["C"]), (1, ["E", "B", "E"]), (2, ["A", "E"]), ...]
     """
 
-    raise NotImplementedError
+    return analyze_all()["07"]

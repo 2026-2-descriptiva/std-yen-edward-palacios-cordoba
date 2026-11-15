@@ -1,3 +1,6 @@
+from .analysis import answer
+
+
 def pregunta_02():
     """
     ¿Cuántas columnas tiene la tabla `data/tbl0.tsv`? Retorne la cantidad
@@ -8,4 +11,4 @@ def pregunta_02():
         4
     """
 
-    raise NotImplementedError
+    return answer("02")
